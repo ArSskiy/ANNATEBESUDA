@@ -25,7 +25,7 @@
             <TextBlock Text="Учёт" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White"
                        MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_2"/>
             <Separator Height="30" Opacity="0"/>
-            <TextBlock Text="Отчёт 1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White"/>
+            <TextBlock Text="Отчёт 1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_3"/>
             <Separator Height="30" Opacity="0"/>
             <TextBlock Text="Отчёт 2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="White"/>
         </StackPanel>

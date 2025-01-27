@@ -90,8 +90,14 @@
     <Compile Include="Special.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Uchet1.xaml.cs">
+      <DependentUpon>Uchet1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UchetPage.xaml.cs">
       <DependentUpon>UchetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View_1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Page Include="AddActivityPage.xaml">
       <SubType>Designer</SubType>
@@ -113,6 +119,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Uchet1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UchetPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -27,6 +27,17 @@
             <RowDefinition Height="38*"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
+        <DataGrid  Grid.Row="0"  x:Name="DatGr" AutoGenerateColumns="False" HorizontalAlignment="Center" Loaded="DatGr_Loaded" 
+                   Grid.ColumnSpan="2"  FontSize="12" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Width="80" Binding="{Binding DateEvent, StringFormat=dd/MM/yyyy}"/>
+                <DataGridTextColumn Header="Команда" Width="70" Binding="{Binding Group.Name}"/>
+                <DataGridTextColumn Header="Специальность" Width="145" Binding="{Binding Group.Special.Name}"/>
+                <DataGridTextColumn Header="Соревнование" Width="140" Binding="{Binding Activity.Name}"/>
+                <DataGridTextColumn Header="Статус" Width="80" Binding="{Binding Activity.Direction.Name}"/>
+                <DataGridTextColumn Header="Балл" Width="40" Binding="{Binding Mark}"/>
+            </DataGrid.Columns>
+        </DataGrid>
   <TextBlock Grid.Row="1" Text="Выберите дату" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 20 0"/>
         <DatePicker Grid.Row="1" Grid.Column="1" Width="100" HorizontalAlignment="Left" Name="EventDP"/>
 
@@ -37,8 +48,11 @@
         <ComboBox Grid.Row="4" Grid.Column="1" Name="DirectionCmb" SelectionChanged="DirectionCmb_SelectionChanged"/>
 
         <TextBlock Grid.Row="6" Text="Выберите группу" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <ComboBox Grid.Row="8" Grid.Column="0" Name="GroupCmb"/>
-        <ComboBox Grid.Row="8" Grid.Column="1" Name="ActivityCmb"/>
+        <ComboBox Grid.Row="8" Grid.Column="0" Name="GroupCmb" SelectionChanged="GroupCmb_SelectionChanged"/>
+        <ComboBox Grid.Row="8" Grid.Column="1" Name="ActivityCmb" SelectionChanged="ActivityCmb_SelectionChanged"/>
         <TextBlock Grid.Row="6" Grid.Column="1" Text="Выберите соревнование" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="10" Grid.Column="0" Text="Введите количество баллов" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="1" Name="BallTb" Grid.Row="10" HorizontalAlignment="Left" Width="100" Height="20"/>
+        <Button Grid.Column="1" Grid.Row="10" HorizontalAlignment="Right" Width="100" Height="30" Content="Добавить" Click="Button_Click"/>
     </Grid>
 </Page>

@@ -32,6 +32,14 @@ namespace Control8
             DirectionCmb.SelectedValuePath = "ID";
             DirectionCmb.DisplayMemberPath = "Name";
             DirectionCmb.ItemsSource = App.ent.Direction.ToList();
+
+            GroupCmb.SelectedValuePath = "ID";
+            GroupCmb.DisplayMemberPath = "Name";
+            GroupCmb.ItemsSource = App.ent.Group.ToList();
+
+            ActivityCmb.SelectedValuePath = "ID";
+            ActivityCmb.DisplayMemberPath = "Name";
+            ActivityCmb.ItemsSource = App.ent.Activity.ToList();
         }
 
         private void SpecialCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,6 +52,36 @@ namespace Control8
         {
             int selectDirection = Convert.ToInt32(DirectionCmb.SelectedValue);
             ActivityCmb.ItemsSource = App.ent.Activity.Where(x => x.IdDirection == selectDirection).ToList();
+        }
+
+        private void GroupCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ActivityCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Journal journal = new Journal()
+            {
+                DateEvent = EventDP.DisplayDate,
+                Group = GroupCmb.SelectedItem as Group,
+                Activity = ActivityCmb.SelectedItem as Activity,
+                Mark = Convert.ToDecimal(BallTb.Text)
+            };
+            App.ent.Journal.Add(journal);
+            App.ent.SaveChanges();
+            MessageBox.Show("Запись добавлена");
+            DatGr.ItemsSource = App.ent.Journal.ToList();
+        }
+
+        private void DatGr_Loaded(object sender, RoutedEventArgs e)
+        {
+            DatGr.ItemsSource = App.ent.Journal.ToList();
         }
     }
 }
