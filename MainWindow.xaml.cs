@@ -44,5 +44,10 @@ namespace Control8
         {
             MainFrame.Navigate(new Uchet1());
         }
+
+        private void TextBlock_MouseLeftButtonUp_4(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

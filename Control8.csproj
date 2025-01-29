@@ -93,6 +93,12 @@
     <Compile Include="Uchet1.xaml.cs">
       <DependentUpon>Uchet1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Uchet2.xaml.cs">
+      <DependentUpon>Uchet2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Uchet21.xaml.cs">
+      <DependentUpon>Uchet21.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UchetPage.xaml.cs">
       <DependentUpon>UchetPage.xaml</DependentUpon>
     </Compile>
@@ -120,6 +126,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Uchet1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Uchet2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Uchet21.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
